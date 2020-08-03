@@ -1,0 +1,62 @@
+body {
+    text-align:center;
+    height: 100%;
+    width: 100%;
+    background-image: url("https://images.nintendolife.com/a5a2fe7e5b10e/1280x720.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+#pokedex{
+    margin: auto;
+    background-image: url("https://lh3.googleusercontent.com/proxy/juf0aDfPukOMn97fn9O_wKvQawevhuAGMO1t5mGYD0iw0pHmp1BsIQqlbPgYE0RleOdF_FkUoXaE9x9k6Q");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 1000px;
+    width: 300px;
+    text-align:center;
+}
+
+.pokemonContainer{
+    display: grid;
+    grid-template-areas:
+    'menu header'
+    'menu main'
+    'menu footer'
+}
+.pokemonsname{
+    grid-area: header; 
+    border: 1px solid rgba(0, 0, 0, 0.8);
+  margin: 40px 0px 0px 45px;
+  width: 100px;
+  font-size: 20px;
+  text-align: center;
+
+   
+}
+.pokemonsheight{
+    grid-area: main; 
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    margin: 10px 0px 0px 45px;
+    width: 100px;
+    font-size: 20px;
+    text-align: center;
+  
+}
+.pokemonsweight{
+    grid-area: footer; 
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    margin: 10px 0px 0px 45px;
+    width: 100px;
+    font-size: 20px;
+    text-align: center;
+  
+}
+.pokemonsimage{
+    grid-area: menu;
+    margin: 50px 0px 0px 20px;
+    padding: 0px 0px 0px 0px;
+    
+ 
+}
+
+
