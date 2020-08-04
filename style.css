@@ -34,6 +34,7 @@ body {
     width: 20px;
     height: 20px;
     border-radius: 50%;
+    cursor: pointer;
 }
 #searchButon:hover{
     width: 21px;
