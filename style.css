@@ -2,9 +2,9 @@ body {
     text-align:center;
     height: 100%;
     width: 100%;
-    background-image: url("https://images.nintendolife.com/a5a2fe7e5b10e/1280x720.jpg");
-    background-size: 100%;
-    background-repeat: no-repeat;
+    background-image: url("https://assets.pokemon.com//assets/cms2/img/misc/virtual-backgrounds/masters/forest.jpg");
+    background-size: 170%;
+    /* background-repeat: no-repeat; */
 }
 #pokedex{
     margin: auto;
@@ -78,7 +78,7 @@ body {
 }
 .pokemonTypesList{
     grid-area: types; 
-    margin: 75px 100px 0px 25px;
+    margin: 73px 100px 0px 25px;
     width: 300px;
     font-size: 10px;
     text-align: right;
@@ -88,7 +88,7 @@ body {
 }
 .pokemonType{
     list-style: none;
-    margin: 17px -135px 0px 35px;
+    margin: 15px -135px 0px 39px;
     width: 45px;
     font-size: 10px;
     text-align: left;
@@ -104,11 +104,11 @@ body {
 }
 .pokemonList{
     text-align: left;
-  
+    position: absolute;
     background-color: white;
     border: 2px solid rgb(255, 0, 0);
-    margin: -150px 0px 0px 220px;
-    width: 400px;
+    margin: -150px 0px 0px 120px;
+    width: 100px;
 
 }
 
@@ -124,4 +124,8 @@ body {
     border: 1px solid rgb(255, 0, 0);
 }
 
-
+.notfound{
+    position: absolute;
+    width: 120px;
+    margin: 80px 0px 0px 15px;
+}
