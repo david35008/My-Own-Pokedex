@@ -1,22 +1,23 @@
 function getPokemon(pokeIdentifier) {
   axios.defaults.baseURL = 'https://pokeapi.co/api/v2';
-
-  return axios.get(pokeIdentifier)
+  let temperror = axios.get(pokeIdentifier)
     .then(response => response.data)
-    .catch((error) => { alert("Pokemon not found\n" + error.message); });
-};
+    .catch(() => { addChild(resultsArea, "notfound" , "Pokemon not found", newPokemon)})
+    return temperror;
+}
 
 async function showPokemon(eabba) {
   if (typeof eabba !== typeof "") { eabba = searchBoxValue.value };
   if (eabba === "") { return };
 
-  const data = await getPokemon(`/pokemon/${eabba}`);
+  const data = await getPokemon(`/pokemon/${eabba}`)
   let types = [];
   let typesList = [];
+try{
   data.types.forEach(element => {
     types.push(element.type.name);
     typesList.push(element.type.url);
-  });
+  })} catch {return }
 
   makeDiv(data.name, data.height, data.weight, data.sprites.front_default, data.sprites.back_default, types, typesList);
   searchBoxValue.value = "";
@@ -26,7 +27,6 @@ async function showPokemon(eabba) {
 const searchButon = document.getElementById('searchButon');
 const searchBoxValue = document.getElementById('search');
 const resultsArea = document.getElementById('results');
-
 const newPokemon = document.createElement('div');
 const pokemonName = document.createElement('div');
 const pokemonHeight = document.createElement('div');
