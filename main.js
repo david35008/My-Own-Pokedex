@@ -6,20 +6,20 @@ function getPokemon(pokeIdentifier) {
     return temperror;
 }
 
-async function showPokemon(eabba) {
-  if (typeof eabba !== typeof "") { eabba = searchBoxValue.value };
-  if (eabba === "") { return };
+async function showPokemon(searchValue) {
+  if (typeof searchValue !== typeof "") { searchValue = searchBoxValue.value.toLowerCase() };
+  if (searchValue === "") { return };
 
-  const data = await getPokemon(`/pokemon/${eabba}`)
-  let types = [];
-  let typesList = [];
+  const data = await getPokemon(`/pokemon/${searchValue}`)
+  let pokemonTypes = [];
+  let urlListSameType = [];
 try{
   data.types.forEach(element => {
-    types.push(element.type.name);
-    typesList.push(element.type.url);
+    pokemonTypes.push(element.type.name);
+    urlListSameType.push(element.type.url);
   })} catch {return }
 
-  makeDiv(data.name, data.height, data.weight, data.sprites.front_default, data.sprites.back_default, types, typesList);
+  createNewPokemon(data.name, data.height, data.weight, data.sprites.front_default, data.sprites.back_default, pokemonTypes, urlListSameType);
   searchBoxValue.value = "";
   searchBoxValue.focus();
 };
@@ -33,16 +33,16 @@ const pokemonHeight = document.createElement('div');
 const pokemonWeight = document.createElement('div');
 const pokemonImage = document.createElement('img');
 const pokemonTypesList = document.createElement('ul');
-const pokemonList = document.createElement('ul');
+const pokemonListSameType = document.createElement('ul');
 
 function addChild(parent, className, text, child) {
   parent.appendChild(child);
   child.className = className;
-  child.textContent = text;
+  child.textContent =  capitalizeFirstLetter(text);
   return child;
 };
 
-function makeDiv(name, height, weight, image, over, types, typesList) {
+function createNewPokemon(name, height, weight, image, over, types, typesList) {
   addChild(resultsArea, `pokemonContainer`, null, newPokemon);
   addChild(newPokemon, `pokemonsname`, "Name: " + name.charAt(0).toUpperCase() + name.slice(1), pokemonName);
   addChild(newPokemon, `pokemonsheight`, "Height: " + height, pokemonHeight);
@@ -53,11 +53,11 @@ function makeDiv(name, height, weight, image, over, types, typesList) {
     const pokemonType = document.createElement('li');
     addChild(pokemonTypesList, `pokemonType`, element, pokemonType);
     pokemonType.onclick = async () => {
-      addChild(pokemonTypesList, "pokemonList", "pokemons from the same type: ", pokemonList);
+      addChild(pokemonTypesList, "pokemonList", "pokemons from the same type: ", pokemonListSameType);
       let po = await axios.get(typesList[types.indexOf(element)]);
       po.data.pokemon.forEach(element => {
         const pokemon = document.createElement('li');
-        addChild(pokemonList, "pokemonListItem", element.pokemon.name, pokemon);
+        addChild(pokemonListSameType, "pokemonListItem", element.pokemon.name, pokemon);
         pokemon.addEventListener("click", () => showPokemon(element.pokemon.name));
       });
     };
@@ -68,6 +68,9 @@ function makeDiv(name, height, weight, image, over, types, typesList) {
   pokemonImage.onmouseleave = () => pokemonImage.src = image;
 }
 function capitalizeFirstLetter(string) {
-  return string.charAt(0).toUpperCase() + string.slice(1);
+  if(typeof string === typeof ""){
+  let newString = string.charAt(0).toUpperCase() + string.slice(1);
+  return newString
+}
 }
 searchButon.addEventListener('click', showPokemon);
