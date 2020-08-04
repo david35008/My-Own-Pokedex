@@ -1,6 +1,5 @@
 function getPokemon(pokeIdentifier) {
-  const API_URL = 'https://pokeapi.co/api/v2';
-  axios.defaults.baseURL = API_URL;
+  axios.defaults.baseURL = 'https://pokeapi.co/api/v2';
 
   return axios.get(pokeIdentifier)
     .then(response => response.data)
@@ -43,7 +42,7 @@ function addChild(parent, className, text, child) {
   return child;
 };
 
-async function makeDiv(name, height, weight, image, over, types, typesList) {
+function makeDiv(name, height, weight, image, over, types, typesList) {
   addChild(resultsArea, `pokemonContainer`, null, newPokemon);
   addChild(newPokemon, `pokemonsname`, "Name: " + name.charAt(0).toUpperCase() + name.slice(1), pokemonName);
   addChild(newPokemon, `pokemonsheight`, "Height: " + height, pokemonHeight);
@@ -59,10 +58,7 @@ async function makeDiv(name, height, weight, image, over, types, typesList) {
       po.data.pokemon.forEach(element => {
         const pokemon = document.createElement('li');
         addChild(pokemonList, "pokemonListItem", element.pokemon.name, pokemon);
-        pokemon.addEventListener("click", getspas);
-        function getspas() {
-          showPokemon(element.pokemon.name);
-        };
+        pokemon.addEventListener("click", () => showPokemon(element.pokemon.name));
       });
     };
   });
@@ -70,7 +66,6 @@ async function makeDiv(name, height, weight, image, over, types, typesList) {
   pokemonImage.src = image;
   pokemonImage.onmouseover = () => pokemonImage.src = over;
   pokemonImage.onmouseleave = () => pokemonImage.src = image;
-
 }
 function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
