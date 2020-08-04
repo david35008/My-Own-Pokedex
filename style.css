@@ -4,7 +4,6 @@ body {
     width: 100%;
     background-image: url("https://assets.pokemon.com//assets/cms2/img/misc/virtual-backgrounds/masters/forest.jpg");
     background-size: 170%;
-    /* background-repeat: no-repeat; */
 }
 #pokedex{
     margin: auto;
@@ -18,27 +17,28 @@ body {
 
 #search {
     position: absolute;
-    margin: 178px 0px 0px -115px;
+    margin: 178px 0px 0px -138px;
     background-color: yellow;
-    width: 45px;
+    width: 73px;
     height: 20px;
+    text-size-adjust: 15px;
 }
 
 #searchButon{
     position: absolute;
-    margin: 154px 0px 0px -135px;
+    margin: 150px 0px 0px -140px;
     background-image: url("https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/search-512.png");
     background-size: 95%;
     background-color: white;
     background-repeat: no-repeat;
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     border-radius: 50%;
     cursor: pointer;
 }
 #searchButon:hover{
-    width: 21px;
-    height: 21px;
+    width: 28px;
+    height: 28px;
     background-color: whitesmoke;
 }
 
@@ -84,17 +84,23 @@ body {
     font-size: 10px;
     text-align: right;
     display: flex;
- 
-    
 }
 .pokemonType{
     list-style: none;
-    margin: 15px -135px 0px 39px;
+    margin: 11px -123px 0px 25px;
+    background-color: orange;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    height: 20px;
     width: 45px;
     font-size: 10px;
-    text-align: left;
+    text-align: center;
     cursor:pointer;
-
+}
+.pokemonType:hover{
+    background-color: wheat;
+    height: 22px;
+  
 }
 .pokemonsimage{
     grid-area: menu;
