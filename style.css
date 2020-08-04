@@ -8,7 +8,7 @@ body {
 }
 #pokedex{
     margin: auto;
-    background-image: url("https://lh3.googleusercontent.com/proxy/juf0aDfPukOMn97fn9O_wKvQawevhuAGMO1t5mGYD0iw0pHmp1BsIQqlbPgYE0RleOdF_FkUoXaE9x9k6Q");
+    background-image: url("https://pbs.twimg.com/profile_images/1870947834/pokedex1.gif");
     background-size: 100%;
     background-repeat: no-repeat;
     height: 1000px;
@@ -19,16 +19,16 @@ body {
 .pokemonContainer{
     display: grid;
     grid-template-areas:
-    'menu header'
-    'menu main'
-    'menu footer'
+    'menu header header'
+    'menu main footer'
+    'menu types types'
 }
 .pokemonsname{
     grid-area: header; 
     border: 1px solid rgba(0, 0, 0, 0.8);
-  margin: 40px 0px 0px 45px;
-  width: 100px;
-  font-size: 20px;
+  margin: 45px 0px 0px 67px;
+  width: 90px;
+  font-size: 10px;
   text-align: center;
 
    
@@ -36,27 +36,67 @@ body {
 .pokemonsheight{
     grid-area: main; 
     border: 1px solid rgba(0, 0, 0, 0.8);
-    margin: 10px 0px 0px 45px;
-    width: 100px;
-    font-size: 20px;
+    margin: 5px 0px 0px 65px;
+    width: 45px;
+    font-size: 8px;
     text-align: center;
   
 }
 .pokemonsweight{
     grid-area: footer; 
     border: 1px solid rgba(0, 0, 0, 0.8);
-    margin: 10px 0px 0px 45px;
-    width: 100px;
-    font-size: 20px;
+    margin: 5px 1000px 0px 0px;
+    width: 45px;
+    font-size: 8px;
     text-align: center;
   
 }
+.pokemonTypesList{
+    grid-area: types; 
+    margin: 75px 100px 0px 25px;
+    width: 300px;
+    font-size: 10px;
+    text-align: right;
+    display: flex;
+ 
+    
+}
+.pokemonType{
+    list-style: none;
+    margin: 17px -135px 0px 35px;
+    width: 45px;
+    font-size: 10px;
+    text-align: left;
+    cursor:pointer;
+
+}
 .pokemonsimage{
     grid-area: menu;
-    margin: 50px 0px 0px 20px;
+    margin: 30px 0px 0px 20px;
     padding: 0px 0px 0px 0px;
     
  
+}
+.pokemonList{
+    text-align: left;
+  
+    background-color: white;
+    border: 2px solid rgb(255, 0, 0);
+    margin: -150px 0px 0px 220px;
+    width: 400px;
+
+}
+
+.pokemonListItem{
+    cursor:pointer;
+    list-style: none;
+    font-size: 10px;
+    margin: 0px 0px 0px -35px;
+}
+
+.pokemonListItem:hover{
+    background-color: wheat;
+    border: 1px solid rgb(255, 0, 0);
 }
 
 
