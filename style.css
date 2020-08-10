@@ -6,7 +6,7 @@ body {
     background-size: 140%;
 }
 
-#pokedex {
+#pokedexContainer {
     margin: auto;
     background-image: url("https://pbs.twimg.com/profile_images/1870947834/pokedex1.gif");
     background-size: 100%;
@@ -16,13 +16,18 @@ body {
     text-align: center;
 }
 
-#search {
+#whatToDO {
     position: absolute;
-    margin: 410px 0px 0px -320px;
+    margin: 398px 0px 0px -325px;
+}
+
+#searchInputBox {
+    position: absolute;
+    margin: 416px 0px 0px -320px;
     background-color: yellow;
     width: 175px;
-    height: 60px;
-    font-size: 30px;
+    height: 51px;
+    font-size: 20px;
 }
 
 #searchButon {
@@ -63,7 +68,7 @@ body {
     border: 1px solid rgba(0, 0, 0, 0.8);
     margin: 5px 0px 0px 167px;
     width: 105px;
-    font-size: 18px;
+    font-size: 20px;
     text-align: center;
 }
 
@@ -72,13 +77,13 @@ body {
     border: 1px solid rgba(0, 0, 0, 0.8);
     margin: 5px 1000px 0px 0px;
     width: 105px;
-    font-size: 18px;
+    font-size: 20px;
     text-align: center;
 }
 
 .pokemonTypesList {
     grid-area: types;
-    margin: 187px 100px 0px 120px;
+    margin: 163px 100px 0px 120px;
     width: 300px;
     font-size: 20px;
     text-align: right;
@@ -87,6 +92,7 @@ body {
 
 .pokemonType {
     list-style: none;
+    /* align-self: center; */
     margin: 22px -297px 0px 70px;
     background-color: orange;
     border: 1px solid rgba(0, 0, 0, 0.8);
@@ -149,7 +155,7 @@ body {
     border-radius: 10px;
 }
 
-.first {
+.firstLedBackround {
     background-color: red;
 }
 
@@ -163,11 +169,11 @@ body {
     border-radius: 10px;
 }
 
-.second {
+.secondLedBackround {
     background-color: greenyellow;
 }
 
-#next {
+#nextPokemon {
     position: absolute;
     margin: 364px 0px 0px 125px;
     background-image: url("https://i.ibb.co/hFNz1pv/right.png");
@@ -179,7 +185,7 @@ body {
     cursor: pointer;
 }
 
-#previos {
+#previosPokemon {
     position: absolute;
     margin: 364px 0px 0px 80px;
     background-image: url("https://i.ibb.co/dBFKwFr/left.png");
