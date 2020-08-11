@@ -7,6 +7,7 @@ body {
 }
 
 #pokedexContainer {
+    grid-template-columns: auto;
     margin: auto;
     background-image: url("https://pbs.twimg.com/profile_images/1870947834/pokedex1.gif");
     background-size: 100%;
