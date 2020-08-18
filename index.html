@@ -1,15 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Pokedex</title>
 </head>
+
 <body>
-  <input id="search" /><button id="searchButon">Search</button>
-  <div id="results">
-  </div>
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script> <!-- todo later: use a local copy installed via npm -->
-  <script src="./main.js"></script>  <!-- todo: change to type:module -->
+    <section id="pokedexContainer">
+        <label id="whatToDO">You can type name \ number:</label>
+        <input id="searchInputBox" placeholder="Search pokemon..." />
+        <button id="searchButon"></button>
+        <div id="firstLed" class="firstLedBackround"></div>
+        <div id="secondLed" class="secondLedBackround"></div>
+        <button id="nextPokemon"></button>
+        <button id="previosPokemon"></button>
+        <div id="resultsArea"></div>
+    </section>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="main.js"></script>
 </body>
+
 </html>

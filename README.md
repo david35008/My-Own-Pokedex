@@ -1,5 +1,5 @@
 # Pokedex
-
+my app : https://my-own-pokedex.vercel.app/
 Before:
 * Create new private repo in your github account
 * (OPTIONAL) use index.html/main.js as an examples (don't clone this repo)
