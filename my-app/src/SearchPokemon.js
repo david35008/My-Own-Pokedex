@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import axios from 'axios';
 
 
@@ -19,16 +19,15 @@ function createNewPokemon(name, height, weight, image, over, types, typesList, i
     props.setInputValue('')
     inputRef.current.focus()
     let typesContainer = [];
-  types.forEach(element => {
+  types.forEach((element, index) => {
     typesContainer.push(
-      <li className='pokemonType' onClick={async () => {
+      <li key={element+index} className='pokemonType' onClick={async () => {
         props.setShow(true);
         let pokemonsList = await axios.get(typesList[types.indexOf(element)]);
         let clone = []
-        pokemonsList.data.pokemon.forEach(element => {
-            debugger
+        pokemonsList.data.pokemon.forEach((element, index) => {
           clone.push(
-            <li className='pokemonListItem' onClick={() => showPokemon(element.pokemon.name)}  >{element.pokemon.name}  </li>
+            <li key={element+index} className='pokemonListItem' onClick={() => showPokemon(element.pokemon.name)}  >{element.pokemon.name}  </li>
           )
         })
         props.setPokemonSameType(clone)
@@ -41,7 +40,7 @@ function createNewPokemon(name, height, weight, image, over, types, typesList, i
       <div className='pokemonsname' >Name:{capitalize(name)}</div>
       <div className='pokemonsheight' >Height: <br /> {Number(height) * 10}cm</div>
       <div className='pokemonsweight' >weight: <br /> {Number(weight) / 10}kg</div>
-      <img className='pokemonsimage' src={image} onMouseOver={event => event.target.src = over} onMouseOut={event => event.target.src = image}></img>
+      <img className='pokemonsimage' alt={name} src={image} onMouseOver={event => event.target.src = over} onMouseOut={event => event.target.src = image}></img>
       <ul className='pokemonTypesList' >Types:{typesContainer}</ul>
     </div>
   )
@@ -97,8 +96,8 @@ function createNewPokemon(name, height, weight, image, over, types, typesList, i
             <button id='nextPokemon' onClick={() => { nextPokemon() }}></button>
              <button id='previosPokemon' onClick={() => { prevPokemon()}} ></button> 
             <label id="whatToDO">You can type name \ number:</label>
-            <div id="firstLed" class="firstLedBackround"></div>
-            <div id="secondLed" class="secondLedBackround"></div>
+            <div id="firstLed" className="firstLedBackround"></div>
+            <div id="secondLed" className="secondLedBackround"></div>
         </>
     )
 
