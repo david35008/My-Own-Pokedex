@@ -6,3 +6,5 @@ Pokedex app using ajax request with `https://pokeapi.co/api/`.
 The App Gif: 
 ![alt text](./my-app/images/u5lpFUdliA.gif)
 
+The App: 
+https://my-pokedex-ivory.vercel.app/
