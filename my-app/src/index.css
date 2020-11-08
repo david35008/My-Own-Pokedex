@@ -1,9 +1,15 @@
+html {
+    max-height: 95vh;
+    max-width: 90vw;
+}
+
 body {
     text-align: center;
     height: 100%;
     width: 100%;
     background-image: url("https://assets.pokemon.com//assets/cms2/img/misc/virtual-backgrounds/masters/forest.jpg");
     background-size: 140%;
+    background-repeat: no-repeat;
 }
 
 #pokedexContainer {
@@ -119,6 +125,8 @@ body {
 }
 
 .pokemonList {
+    overflow: auto;
+    max-height:500px;
     text-align: left;
     position: absolute;
     background-color: white;
