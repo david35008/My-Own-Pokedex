@@ -1,4 +1,4 @@
-# Tic-tac-toe-React-Nodejs
+# Pokedex AJAX Request
 My first project with ajax.
 
 Pokedex app using ajax request with `https://pokeapi.co/api/`.
